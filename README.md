@@ -1,34 +1,34 @@
 # ⚛️ MIT iQuHACK 2026 - IonQ Quantum Networking Challenge
 
-Este repositorio contiene la solución desarrollada por el equipo de **Quantum Verse** para el reto propuesto por **IonQ** durante el **MIT iQuHACK 2026**, uno de los hackathons de computación cuántica más prestigiosos del mundo organizado por el Massachusetts Institute of Technology.
+This repository contains the solution developed by team **Quantum Verse** for the challenge proposed by **IonQ** during **MIT iQuHACK 2026**, one of the world's most prestigious quantum computing hackathons organized by the Massachusetts Institute of Technology.
 
-## 🎯 El Reto
-El desafío consistía en un juego de estrategia competitivo estilo *Risk* basado en la física de redes cuánticas. El objetivo era conquistar nodos (ciudades) alrededor del mundo estableciendo enlaces de entrelazamiento cuántico. 
+## 🎯 The Challenge
+The challenge consisted of a competitive, *Risk*-style strategy game based on quantum networking physics. The goal was to conquer nodes (cities) around the world by establishing quantum entanglement links. 
 
-El problema principal era el **ruido cuántico**. Los pares de Bell "crudos" sufrían de baja fidelidad debido a la interferencia en la red (errores de bit y de fase). Para reclamar un enlace de alta dificultad, debíamos alcanzar una fidelidad de transmisión superior a **0.90**, todo ello gestionando un presupuesto muy estricto de recursos cuánticos.
+The main hurdle was **quantum noise**. The "raw" Bell pairs suffered from low fidelity due to network interference (bit-flip and phase-flip errors). To claim a high-difficulty link, we had to reach a transmission fidelity greater than **0.90**, all while managing a very strict quantum resource budget.
 
-## 🚀 Nuestra Solución: Destilación de Entrelazamiento (Entanglement Distillation)
-Desarrollamos algoritmos de corrección de errores mediante protocolos adaptativos **LOCC** (Local Operations and Classical Communication). En lugar de depender de métodos estándar que consumen muchos recursos, diseñamos estrategias de alta eficiencia:
+## 🚀 Our Solution: Entanglement Distillation
+We developed error-correction algorithms using adaptive **LOCC** (Local Operations and Classical Communication) protocols. Instead of relying on resource-heavy standard methods, we designed highly efficient strategies:
 
-### 1. Estrategia "Protección de Fase" (2 Bell Pairs)
-Un circuito altamente optimizado para enlaces con ruido predominante de Fase (Z). 
-* Utilizamos puertas Hadamard y un par de sacrificio como "chivato" mediante puertas CNOT bilaterales.
-* Si la medida del par de sacrificio indicaba paridad correcta (`flag = 0`), el par de destino colapsaba en un estado de alta pureza.
-* **Resultado:** Conquista de nodos de Dificultad 3 (ej. Moscú) gastando la mitad de recursos que los equipos competidores.
+### 1. "Phase Protection" Strategy (2 Bell Pairs)
+A highly optimized circuit for links where Phase (Z) noise was predominant. 
+* We used Hadamard gates and a sacrificial pair as a "flag" via bilateral CNOT gates.
+* If the measurement of the sacrificial pair indicated the correct parity (`flag = 0`), the target pair collapsed into a high-purity state.
+* **Result:** Conquered Difficulty 3 nodes (e.g., Moscow) while spending half the resources compared to competing teams.
 
-### 2. Estrategia "El Tanque X+Z" (3 Bell Pairs)
-Para nodos críticos donde el ruido era mixto o desconocido, implementamos un protocolo de limpieza completa.
-* **Sacrificio Z:** Un par dedicado exclusivamente a detectar y filtrar errores de Fase.
-* **Sacrificio X:** Un par dedicado a detectar y filtrar errores de Bit.
-* **Resultado:** Al purificar el entrelazamiento en ambas bases de forma secuencial, garantizamos la captura de los nodos más valiosos del mapa (ej. Minsk, Kyiv) superando los umbrales de fidelidad más exigentes.
+### 2. "The X+Z Tank" Strategy (3 Bell Pairs)
+For critical nodes where the noise was mixed or unknown, we implemented a complete cleanup protocol.
+* **Z Sacrifice:** A pair dedicated exclusively to detecting and filtering Phase errors.
+* **X Sacrifice:** A pair dedicated to detecting and filtering Bit-flip errors.
+* **Result:** By sequentially purifying entanglement in both bases, we guaranteed the capture of the map's most valuable nodes (e.g., Minsk, Kyiv), surpassing the most demanding fidelity thresholds.
 
-## 🛠️ Tecnologías Utilizadas
-* **Python:** Para la lógica de enrutamiento, análisis de nodos y llamadas a la API del simulador.
-* **Qiskit:** Diseño, construcción y simulación de los circuitos de destilación cuántica.
-* **OpenQASM 3.0:** Exportación de los circuitos y lógica de control condicional clásica a nivel de hardware para su ejecución en la infraestructura de IonQ.
+## 🛠️ Technologies Used
+* **Python:** For routing logic, node analysis, and simulator API calls.
+* **Qiskit:** Design, construction, and simulation of the quantum distillation circuits.
+* **OpenQASM 3.0:** Circuit exporting and classical conditional control logic at the hardware level for execution on IonQ's infrastructure.
 
-## 🏆 Logros Destacados
-* **Optimización de Presupuesto:** Alcanzamos fidelidades >0.90 utilizando estrategias de 2 y 3 pares, maximizando nuestro "Claim Strength" global.
-* **Expansión Estratégica:** Desarrollo de un script de análisis heurístico para identificar "Utility Qubits" y "Bonus Bell Pairs" en el grafo, permitiendo una expansión eficiente por el norte y este de Europa.
+## 🏆 Key Achievements
+* **Budget Optimization:** We achieved fidelities >0.90 using 2- and 3-pair strategies, maximizing our global "Claim Strength".
+* **Strategic Expansion:** Developed a heuristic analysis script to identify "Utility Qubits" and "Bonus Bell Pairs" within the graph, enabling efficient expansion across Northern and Eastern Europe.
 
-*Proyecto desarrollado durante el MIT iQuHACK (Enero 2026).*
+*Project developed during MIT iQuHACK (January 2026).*
